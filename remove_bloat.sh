@@ -1,7 +1,6 @@
 #!/bin/bash
 read -p "Enter watch IP:Port - " ip
 adb connect $ip
-adb shell pm list packages
 adb shell pm uninstall -k --user 0 com.android.providers.media # media
 adb shell pm uninstall -k --user 0 com.samsung.android.gallery.watch # gallery
 adb shell pm uninstall -k --user 0 com.samsung.android.app.reminder # reminders
@@ -18,3 +17,6 @@ adb shell pm uninstall -k --user 0 com.samsung.android.wear.voicerecorder # voic
 adb shell pm uninstall -k --user 0 com.samsung.android.watch.budscontroller # buds controller
 adb shell pm uninstall -k --user 0 com.samsung.android.wearable.music # music
 adb shell pm uninstall -k --user 0 com.samsung.sree # samsung global goals
+adb shell pm uninstall -k --user 0 com.samsung.android.shealthmonitor # remove samsung health monitor in preparation for modded install
+adb install *.apk
+adb disconnect
